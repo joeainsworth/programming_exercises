@@ -1,0 +1,2 @@
+Another example of writing to a file.
+Here we are with a new lineof text
