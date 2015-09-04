@@ -1,9 +1,8 @@
-# Add a class method to your MyCar class that calculates the gas mileage of
-# any car.
+# Override the to_s method to create a user friendly print out of your object.
 
 class MyCar
   attr_accessor :colour
-  attr_reader   :year
+  attr_reader   :year, :model
 
   def initialize(year, colour, model)
     @year          = year
@@ -40,6 +39,10 @@ class MyCar
   def self.gas_milage(distance, gallons)
     puts "#{gallons / distance} miles per gallon of gas"
   end
+
+  def to_s
+    "You have a #{self.colour} #{self.model} made in #{self.year}"
+  end
 end
 
 super_car = MyCar.new(2015, "red", "Ferrari")
@@ -53,3 +56,4 @@ puts "Car colour is #{super_car.colour}"
 puts "Car was made in #{super_car.year}"
 puts super_car.spray_paint("blue")
 MyCar.gas_milage(10, 100)
+puts super_car
