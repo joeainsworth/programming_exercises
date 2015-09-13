@@ -26,6 +26,9 @@ class Player
     @health + @name.length
   end
 
+  def strong?
+    @health > 100
+  end
 end
 
 if __FILE__ == $0
