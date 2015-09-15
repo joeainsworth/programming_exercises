@@ -29,6 +29,10 @@ class Player
   def strong?
     @health > 100
   end
+
+  def <=>(other_player)
+    other_player.health <=> @health
+  end
 end
 
 if __FILE__ == $0
