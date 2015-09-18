@@ -15,6 +15,12 @@ class Player
     puts "#{@name}'s treasures: #{@found_treasures}"
   end
 
+  def each_found_treasure
+    @found_treasures.each do |name, points|
+      yield Treasure.new(name, points)
+    end
+  end
+
   def points
     @found_treasures.values.reduce(0, :+)
   end
@@ -47,6 +53,7 @@ class Player
 end
 
 if __FILE__ == $0
+
   player = Player.new("moe")
   puts player.name
   puts player.health
