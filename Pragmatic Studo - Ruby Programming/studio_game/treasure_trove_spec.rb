@@ -15,6 +15,11 @@ describe Treasure do
     expect(@treasure.points).to eq(50)
   end
 
+  it "returns a random treasure" do
+    treasure = TreasureTrove.random
+    expect(TreasureTrove::TREASURES).to include(treasure)
+  end
+
 end
 
 describe TreasureTrove do
