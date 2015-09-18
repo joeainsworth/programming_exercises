@@ -9,6 +9,7 @@ describe Game do
     @player = Player.new("moe", @initial_health)
 
     @game.add_player(@player)
+    $stdout = StringIO.new
   end
 
   it "should w00t the player if a high number is rolled" do
@@ -27,5 +28,16 @@ describe Game do
     allow_any_instance_of(Die).to receive(:roll).and_return(1)
     @game.play(2)
     expect(@player.health).to eq(@initial_health - (10 * 2))
+  end
+
+  it "assigns a treasure for points during a player's turn" do
+    game = Game.new("Knuckleheads")
+    player = Player.new("moe")
+
+    game.add_player(player)
+
+    game.play(1)
+
+    expect(player.points).not_to be_zero
   end
 end

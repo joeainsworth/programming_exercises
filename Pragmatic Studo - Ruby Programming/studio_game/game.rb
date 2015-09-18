@@ -47,9 +47,14 @@ class Game
       print_name_and_health(player)
     end
 
-    puts "\n#{wimpy_players.size} wimply players:"
+    puts "\n#{wimpy_players.size} wimpl players:"
     wimpy_players.each do |player|
       print_name_and_health(player)
+    end
+
+    @players.each do |player|
+      puts "\n#{player.name}'s point totals:"
+      puts "#{player.score} grand total points"
     end
   end
 
