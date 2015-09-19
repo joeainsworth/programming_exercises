@@ -1,3 +1,6 @@
+require_relative 'treasure_trove'
+
+
 class Player
 
   attr_accessor :name
@@ -16,8 +19,7 @@ class Player
 
   def found_treasure(treasure)
     @found_treasures[treasure.name] += treasure.points
-    puts "#{@name} found a #{treasure.name} worth #{treasure.points} points."
-    puts "#{@name}'s treasures: #{@found_treasures}"
+    puts "#{@name} found a #{treasure.name} worth #{treasure.points} points"
   end
 
   def each_found_treasure
